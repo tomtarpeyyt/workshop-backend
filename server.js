@@ -15,7 +15,7 @@ const db = new sqlite3.Database('db.sqlite');
 
 // Create the "users" table
 db.serialize(() => {
-  db.run(`CREATE TABLE users (
+  db.run(`CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY,
     username TEXT UNIQUE,
     password TEXT
